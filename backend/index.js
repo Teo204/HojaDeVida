@@ -20,7 +20,7 @@ const projects = [
       'Permite administrar inventario, registrar productos y visualizar información estructurada por categorías.',
     extra: '',
     techs: ['React', 'JavaScript', 'CSS', 'Vite'],
-    repo: 'https://github.com/Teo204/proyecto-almacen-con-render-mateo'
+    repo: 'https://github.com/VictorPersonal/proyectoalmacen.git'
   },
   {
     id: 'parqueadero',
