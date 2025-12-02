@@ -3,306 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Profesional - Luis Mateo Muñoz</title>
+    <title>Portafolio - Luis Mateo Muñoz</title>
+    <!-- Fuente más moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container fade-in">
-        <header class="main-header">
-            <div class="profile">
-                <img src="foto.png" alt="Foto de perfil de Luis Mateo Muñoz">
-                <div class="profile-info">
-                    <h1>Luis Mateo Muñoz Jaramillo</h1>
-                    <p class="role">Tecnólogo en Desarrollo de Software (en formación) | Desarrollador Web</p>
-                    <div class="tags">
-                        <span>Frontend</span>
-                        <span>Aplicaciones Web</span>
-                        <span>Angular · React · JavaScript</span>
+    <!-- Navbar fija -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-logo">
+                <span class="logo-dot"></span>
+                <span class="logo-text">LM<span>Dev</span></span>
+            </div>
+            <nav class="topbar-nav">
+                <button class="nav-btn active" data-target="summary">Resumen</button>
+                <button class="nav-btn" data-target="experience">Experiencia</button>
+                <button class="nav-btn" data-target="projects">Proyectos</button>
+                <button class="nav-btn" data-target="education">Educación</button>
+                <button class="nav-btn" data-target="skills">Habilidades</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container fade-in">
+            <!-- HERO / PERFIL -->
+            <section class="hero">
+                <div class="hero-main">
+                    <img src="foto.png" alt="Foto de perfil de Luis Mateo Muñoz" class="hero-avatar">
+                    <div>
+                        <p class="hero-tag">Desarrollo de Software · Frontend</p>
+                        <h1 class="hero-name">Luis Mateo Muñoz Jaramillo</h1>
+                        <p class="hero-role">Tecnólogo en Desarrollo de Software (en formación) | Desarrollador Web</p>
+                        <div class="hero-chips">
+                            <span>React</span>
+                            <span>Angular</span>
+                            <span>JavaScript</span>
+                            <span>Trabajo en equipo</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="contact-info">
-                <p><strong>Email:</strong> 
-                    <a href="mailto:luis.mateo.munoz@correounivalle.edu.co">
-                        luis.mateo.munoz@correounivalle.edu.co
-                    </a>
-                </p>
-                <p><strong>Teléfono:</strong> +57 323 476 4589</p>
-                <p><strong>LinkedIn:</strong> 
-                    <a href="https://www.linkedin.com/in/luis-mateo-mu%C3%B1oz-jaramillo-684b8a381" target="_blank">
-                        /in/luis-mateo-muñoz-jaramillo-684b8a381
-                    </a>
-                </p>
-                <p><strong>GitHub:</strong> 
-                    <a href="https://github.com/Teo204" target="_blank">
-                        github.com/Teo204
-                    </a>
-                </p>
-            </div>
-        </header>
-
-        <nav class="navbar">
-            <div class="nav-card">
-                <button type="button" onclick="scrollToSection('summary')">
-                    <h3>Resumen</h3>
-                    <p>Perfil profesional</p>
-                </button>
-            </div>
-            <div class="nav-card">
-                <button type="button" onclick="scrollToSection('experience')">
-                    <h3>Experiencia</h3>
-                    <p>Proyectos y práctica</p>
-                </button>
-            </div>
-            <div class="nav-card">
-                <button type="button" onclick="scrollToSection('projects')">
-                    <h3>Proyectos</h3>
-                    <p>Portafolio técnico</p>
-                </button>
-            </div>
-            <div class="nav-card">
-                <button type="button" onclick="scrollToSection('education')">
-                    <h3>Educación</h3>
-                    <p>Formación académica</p>
-                </button>
-            </div>
-            <div class="nav-card">
-                <button type="button" onclick="scrollToSection('skills')">
-                    <h3>Habilidades</h3>
-                    <p>Tech & soft skills</p>
-                </button>
-            </div>
-        </nav>
-
-        <!-- RESUMEN -->
-        <section id="summary" class="section animate-on-scroll">
-            <h2>Resumen Profesional</h2>
-            <p>
-                Estudiante de Tecnología en Desarrollo de Software en la Universidad del Valle, con interés en el 
-                desarrollo frontend y la construcción de aplicaciones web funcionales y mantenibles. 
-                Cuento con experiencia académica en <strong>HTML, CSS, JavaScript, Angular y React</strong>, 
-                así como en el uso de <strong>Git y GitHub</strong> para el control de versiones.  
-                Me caracterizo por el trabajo colaborativo, la responsabilidad y una actitud constante de aprendizaje.
-            </p>
-        </section>
-
-        <!-- EXPERIENCIA -->
-        <section id="experience" class="section animate-on-scroll">
-            <h2>Experiencia Relevante</h2>
-
-            <div class="job card">
-                <h3>Desarrollador Web – Proyectos académicos y personales</h3>
-                <p class="job-meta">
-                    <em>Universidad del Valle | 2023 - Actualidad</em>
-                </p>
-                <ul>
-                    <li>Desarrollo de interfaces web utilizando <strong>HTML5, CSS3, JavaScript, Angular y React</strong>.</li>
-                    <li>Implementación de diseño responsivo orientado a mejorar la experiencia de usuario.</li>
-                    <li>Construcción de módulos para gestión de datos (CRUD) y consumo básico de APIs.</li>
-                    <li>Uso de <strong>Git</strong> para el control de versiones y organización del código en repositorios GitHub.</li>
-                    <li>Participación en retos de programación y proyectos integradores durante el semestre.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- PROYECTOS -->
-        <section id="projects" class="section animate-on-scroll">
-            <h2>Proyectos Destacados</h2>
-
-            <div class="projects-grid">
-                
-                <!-- DULCE HOGAR -->
-                <article class="project-card animate-on-scroll">
-                    <h3>Sistema de Gestión de Almacén “Dulce Hogar”</h3>
-                    <p class="project-role">Rol: Desarrollador Frontend (React)</p>
-                    <p>
-                        Aplicación web desarrollada en <strong>React</strong> para la gestión de productos de un almacén.
-                        Permite administrar inventario, registrar productos y visualizar información estructurada por 
-                        categorías. El proyecto refuerza el uso de componentes reutilizables, manejo de estado y 
-                        comunicación mediante props.
+                <div class="hero-contact">
+                    <p><strong>Email</strong><br>
+                        <a href="mailto:luis.mateo.munoz@correounivalle.edu.co">luis.mateo.munoz@correounivalle.edu.co</a>
                     </p>
-                    <p class="project-tech">
-                        Tecnologías: <span>React</span> <span>JavaScript</span> <span>CSS</span> <span>Vite</span>
+                    <p><strong>Teléfono</strong><br>
+                        +57 323 476 4589
                     </p>
-                    <a href="https://github.com/Teo204/proyecto-almacen-con-render-mateo" target="_blank" class="project-link">
-                        Ver repositorio en GitHub
-                    </a>
-                </article>
-                
-                <!-- REPORTE CIUDADANO -->
-                <article class="project-card animate-on-scroll">
-                    <h3>Aplicación de Reporte Ciudadano</h3>
-                    <p class="project-role">Rol: Diseñador UI | Maquetación Frontend</p>
-                    <p>
-                        Proyecto orientado a que los ciudadanos registren reportes relacionados con infraestructura, 
-                        alumbrado e inseguridad. Mi participación se centró en la <strong>definición de la interfaz de 
-                        usuario, estructura de pantalla y maquetación visual</strong>, priorizando claridad y 
-                        facilidad de uso.
+                    <p><strong>LinkedIn</strong><br>
+                        <a href="https://www.linkedin.com/in/luis-mateo-mu%C3%B1oz-jaramillo-684b8a381" target="_blank">
+                            /in/luis-mateo-muñoz-jaramillo-684b8a381
+                        </a>
                     </p>
-                    <p class="project-tech">
-                        Tecnologías: <span>Diseño UI</span> <span>Figma</span> <span>HTML</span> <span>CSS</span>
+                    <p><strong>GitHub</strong><br>
+                        <a href="https://github.com/Teo204" target="_blank">github.com/Teo204</a>
                     </p>
-                    <!-- Cambia este enlace por el repo o materiales reales -->
-                    <a href="https://github.com/Teo204" target="_blank" class="project-link">
-                        Ver materiales relacionados
-                    </a>
-                </article>
+                </div>
+            </section>
 
-                <!-- RETO 1 -->
-                <article class="project-card animate-on-scroll">
-                    <h3>Reto 1 – Sistema de Control de Parqueadero</h3>
-                    <p class="project-role">Rol: Desarrollador Fullstack</p>
-                    <p>
-                        Desarrollo de un sistema para gestionar el ingreso y salida de vehículos de un parqueadero,
-                        integrando un servidor backend con <strong>Node.js + Express</strong> y un frontend 
-                        construido con <strong>React</strong>.  
-                        La aplicación implementa rutas personalizadas y una API REST con métodos 
-                        <strong>GET, POST, PUT y DELETE</strong>, además de estilos propios y navegación mínima funcional.
-                    </p>
-                    <p class="project-tech">
-                        Tecnologías: 
-                        <span>React</span> 
-                        <span>Node.js</span> 
-                        <span>Express</span> 
-                        <span>JavaScript</span> 
-                        <span>CSS</span> 
-                        <span>Git</span>
-                    </p>
-                    <a href="https://github.com/Teo204/Parqueadero" target="_blank" class="project-link">
-                        Ver repositorio en GitHub
-                    </a>
-                </article>
-
-                <!-- RETO 2 -->
-                <article class="project-card animate-on-scroll">
-                    <h3>Reto 2 – Sistema de Gestión de Identificación Ciudadana</h3>
-                    <p class="project-role">Rol: Diseño de modelo de datos y reportes</p>
-                    <p>
-                        Ejercicio basado en un encargo de la Registraduría Nacional de Colombia para diseñar
-                        un sistema de gestión de documentos de identidad y datos personales. 
-                        Se definieron entidades para tipos de documentos (cédula, pasaporte, visa, etc.) con 
-                        su estado, y para personas con información como nombres, apellidos, fecha de nacimiento,
-                        residencia, datos de los padres y sexo.
-                        El reto incluyó el modelado relacional y la construcción de consultas para generar 
-                        reportes: <strong>reporte de usuarios</strong> (país, ciudad, nombre, tipo y número de documento) 
-                        y <strong>reporte departamental</strong> (departamento, nombre de la persona y sexo).
-                    </p>
-                    <p class="project-tech">
-                        Tecnologías: 
-                        <span>Modelado relacional</span>
-                        <span>SQL</span>
-                        <span>Consultas y reportes</span>
-                        <span>Git</span>
-                    </p>
-                    <a href="https://github.com/Teo204/reto-industria-revolcuion" target="_blank" class="project-link">
-                        Ver repositorio en GitHub
-                    </a>
-                </article>
-
-                <!-- RETO 3 -->
-                <article class="project-card animate-on-scroll">
-                    <h3>Reto 3 – Plataforma de Redistribución de Alimentos en Caicedonia</h3>
-                    <p class="project-role">Rol: Diseño de solución y prototipo de plataforma</p>
-                    <p>
-                        Proyecto con enfoque social orientado a reducir el desperdicio de alimentos en Caicedonia,
-                        conectando establecimientos donantes con familias, personas mayores y habitantes en situación de calle.
-                        Se diseñó una plataforma donde los <strong>donantes</strong> registran alimentos próximos a vencerse, 
-                        los <strong>beneficiarios</strong> pueden solicitarlos según cercanía y los <strong>voluntarios</strong> 
-                        gestionan rutas y estados de entrega (recogido, en camino, entregado).
-                    </p>
-                    <p>
-                        El trabajo incluyó la definición del problema, justificación, objetivos, modelado de funcionamiento
-                        y diseño del flujo de usuarios, destacando el impacto social en términos de reducción de desperdicio,
-                        acceso a alimentos y participación comunitaria.
-                    </p>
-                    <p class="project-tech">
-                        Tecnologías / Herramientas: 
-                        <span>Levantamiento de requisitos</span>
-                        <span>Diseño de plataforma</span>
-                        <span>Git</span>
-                        <span>GitHub</span>
-                    </p>
-                    <a href="https://github.com/Teo204/caicedonia-alimentos" target="_blank" class="project-link">
-                        Ver repositorio en GitHub
-                    </a>
-                </article>
-            </div>
-        </section>
-
-
-        <!-- EDUCACIÓN -->
-        <section id="education" class="section animate-on-scroll">
-            <h2>Educación</h2>
-            <div class="card">
+            <!-- RESUMEN -->
+            <section id="summary" class="section animate-on-scroll">
+                <h2>Resumen Profesional</h2>
                 <p>
-                    <strong>Tecnología en Desarrollo de Software</strong><br>
-                    Universidad del Valle<br>
-                    <span class="edu-dates">2023 - 2026 (En curso)</span>
+                    Estudiante de Tecnología en Desarrollo de Software en la Universidad del Valle, con interés 
+                    en el desarrollo frontend y la construcción de aplicaciones web funcionales y mantenibles. 
+                    Cuento con experiencia académica en <strong>HTML, CSS, JavaScript, Angular y React</strong>, 
+                    así como en el uso de <strong>Git y GitHub</strong> para el control de versiones. 
+                    Me caracterizo por el trabajo colaborativo, la responsabilidad y una actitud constante de aprendizaje.
                 </p>
-            </div>
-        </section>
+            </section>
 
-        <!-- HABILIDADES -->
-        <section id="skills" class="section animate-on-scroll">
-            <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>Habilidades Técnicas</h3>
-                    <ul class="skills-list">
-                        <li><span>HTML5</span></li>
-                        <li><span>CSS3 · Responsive Design</span></li>
-                        <li><span>JavaScript (básico-intermedio)</span></li>
-                        <li><span>Angular (proyectos académicos)</span></li>
-                        <li><span>React (proyecto Dulce Hogar)</span></li>
-                        <li><span>Python (fundamentos)</span></li>
-                        <li><span>SQL (consultas básicas)</span></li>
-                        <li><span>Git y GitHub</span></li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Habilidades Blandas</h3>
-                    <ul class="skills-list">
-                        <li><span>Trabajo en equipo</span></li>
-                        <li><span>Comunicación asertiva</span></li>
-                        <li><span>Organización y manejo del tiempo</span></li>
-                        <li><span>Resolución de problemas</span></li>
-                        <li><span>Adaptabilidad</span></li>
-                        <li><span>Aprendizaje continuo</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            <!-- EXPERIENCIA -->
+            <section id="experience" class="section animate-on-scroll">
+                <h2>Experiencia Relevante</h2>
 
-        <!-- DESCARGA CV -->
-        <section class="download animate-on-scroll">
-            <!-- Cambia el href por tu PDF real si lo tienes -->
-            <a href="CV_Luis_Mateo_Munoz.pdf" class="download-btn" target="_blank">
-                Descargar CV en PDF
-            </a>
-        </section>
-    </div>
+                <article class="card job-card">
+                    <h3>Desarrollador Web – Proyectos académicos y personales</h3>
+                    <p class="job-meta"><em>Universidad del Valle | 2023 - Actualidad</em></p>
+                    <ul>
+                        <li>Desarrollo de interfaces web utilizando <strong>HTML5, CSS3, JavaScript, Angular y React</strong>.</li>
+                        <li>Implementación de diseño responsivo orientado a mejorar la experiencia de usuario.</li>
+                        <li>Construcción de módulos para gestión de datos (CRUD) y consumo básico de APIs.</li>
+                        <li>Uso de <strong>Git</strong> para el control de versiones y organización del código en GitHub.</li>
+                        <li>Participación en retos de programación y proyectos integradores durante el semestre.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- PROYECTOS -->
+            <section id="projects" class="section animate-on-scroll">
+                <h2>Proyectos Destacados</h2>
+
+                <div class="projects-grid">
+                    <!-- DULCE HOGAR -->
+                    <article class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <h3>Sistema de Gestión de Almacén “Dulce Hogar”</h3>
+                            <span class="pill">Frontend · React</span>
+                        </div>
+                        <p class="project-role">Rol: Desarrollador Frontend</p>
+                        <p>
+                            Aplicación web desarrollada en <strong>React</strong> para la gestión de productos de un almacén.
+                            Permite administrar inventario, registrar productos y visualizar información estructurada por 
+                            categorías. El proyecto refuerza el uso de componentes reutilizables, manejo de estado y 
+                            comunicación mediante props.
+                        </p>
+                        <p class="project-tech">
+                            Tecnologías: <span>React</span> <span>JavaScript</span> <span>CSS</span> <span>Vite</span>
+                        </p>
+                        <a href="https://github.com/Teo204/proyecto-almacen-con-render-mateo" target="_blank" class="project-link">
+                            Ver repositorio en GitHub
+                        </a>
+                    </article>
+
+                    <!-- RETO 1 -->
+                    <article class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <h3>Reto 1 – Sistema de Control de Parqueadero</h3>
+                            <span class="pill pill-outline">Fullstack</span>
+                        </div>
+                        <p class="project-role">Rol: Desarrollador Fullstack</p>
+                        <p>
+                            Desarrollo de un sistema para gestionar el ingreso y salida de vehículos de un parqueadero,
+                            integrando un servidor backend con <strong>Node.js + Express</strong> y un frontend 
+                            construido con <strong>React</strong>. La aplicación implementa rutas personalizadas y 
+                            una API REST con métodos <strong>GET, POST, PUT y DELETE</strong>, además de estilos 
+                            propios y navegación funcional.
+                        </p>
+                        <p class="project-tech">
+                            Tecnologías: 
+                            <span>React</span> 
+                            <span>Node.js</span> 
+                            <span>Express</span> 
+                            <span>JavaScript</span> 
+                            <span>CSS</span> 
+                            <span>Git</span>
+                        </p>
+                        <a href="https://github.com/Teo204/Parqueadero" target="_blank" class="project-link">
+                            Ver repositorio en GitHub
+                        </a>
+                    </article>
+
+                    <!-- RETO 2 -->
+                    <article class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <h3>Reto 2 – Sistema de Gestión de Identificación Ciudadana</h3>
+                            <span class="pill">Datos · SQL</span>
+                        </div>
+                        <p class="project-role">Rol: Diseño de modelo de datos y reportes</p>
+                        <p>
+                            Ejercicio inspirado en un encargo de la Registraduría Nacional de Colombia para diseñar
+                            un sistema de gestión de documentos de identidad y datos personales. 
+                            Se modelaron tipos de documento y personas (nombre, residencia, fecha de nacimiento, 
+                            datos de los padres, sexo, etc.) y se construyeron consultas para generar reportes de usuarios 
+                            y reportes departamentales.
+                        </p>
+                        <p class="project-tech">
+                            Tecnologías: 
+                            <span>Modelado relacional</span>
+                            <span>SQL</span>
+                            <span>Consultas y reportes</span>
+                            <span>Git</span>
+                        </p>
+                        <a href="https://github.com/Teo204/reto-industria-revolcuion" target="_blank" class="project-link">
+                            Ver repositorio en GitHub
+                        </a>
+                    </article>
+
+                    <!-- RETO 3 -->
+                    <article class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <h3>Reto 3 – Plataforma de Redistribución de Alimentos en Caicedonia</h3>
+                            <span class="pill pill-outline">Impacto social</span>
+                        </div>
+                        <p class="project-role">Rol: Diseño de solución y prototipo de plataforma</p>
+                        <p>
+                            Proyecto con enfoque social orientado a reducir el desperdicio de alimentos en Caicedonia,
+                            conectando establecimientos donantes con familias, personas mayores y habitantes en situación de calle.
+                            Se diseñó una plataforma donde los <strong>donantes</strong> registran alimentos próximos a vencerse, 
+                            los <strong>beneficiarios</strong> los solicitan según cercanía y los <strong>voluntarios</strong> 
+                            gestionan rutas y estados de entrega (recogido, en camino, entregado).
+                        </p>
+                        <p>
+                            El trabajo incluyó levantamiento de requisitos, definición de objetivos, modelado del flujo de usuarios
+                            y análisis del impacto social en términos de reducción de desperdicio, acceso a alimentos
+                            y participación comunitaria.
+                        </p>
+                        <p class="project-tech">
+                            Tecnologías / Herramientas: 
+                            <span>Levantamiento de requisitos</span>
+                            <span>Diseño de plataforma</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                        </p>
+                        <a href="https://github.com/Teo204/caicedonia-alimentos" target="_blank" class="project-link">
+                            Ver repositorio en GitHub
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- EDUCACIÓN -->
+            <section id="education" class="section animate-on-scroll">
+                <h2>Educación</h2>
+                <article class="card">
+                    <p>
+                        <strong>Tecnología en Desarrollo de Software</strong><br>
+                        Universidad del Valle<br>
+                        <span class="edu-dates">2023 - 2026 (En curso)</span>
+                    </p>
+                </article>
+            </section>
+
+            <!-- HABILIDADES -->
+            <section id="skills" class="section animate-on-scroll">
+                <h2>Habilidades</h2>
+                <div class="skills-grid">
+                    <article class="card">
+                        <h3>Habilidades Técnicas</h3>
+                        <ul class="chips-list">
+                            <li><span>HTML5</span></li>
+                            <li><span>CSS3 · Responsive Design</span></li>
+                            <li><span>JavaScript (básico-intermedio)</span></li>
+                            <li><span>React</span></li>
+                            <li><span>Angular (proyectos académicos)</span></li>
+                            <li><span>Python (fundamentos)</span></li>
+                            <li><span>SQL (consultas básicas)</span></li>
+                            <li><span>Git y GitHub</span></li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Habilidades Blandas</h3>
+                        <ul class="chips-list">
+                            <li><span>Trabajo en equipo</span></li>
+                            <li><span>Comunicación asertiva</span></li>
+                            <li><span>Organización y manejo del tiempo</span></li>
+                            <li><span>Resolución de problemas</span></li>
+                            <li><span>Adaptabilidad</span></li>
+                            <li><span>Aprendizaje continuo</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <!-- DESCARGA CV -->
+            <section class="download animate-on-scroll">
+                <!-- Cambia el href por tu PDF real si lo tienes -->
+                <a href="CV_Luis_Mateo_Munoz.pdf" class="download-btn" target="_blank">
+                    Descargar CV en PDF
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Botón volver arriba -->
+    <button class="to-top" id="toTopBtn" aria-label="Volver arriba">▲</button>
 
     <footer>
         <p>
-            @mateo_munoz.j | Luis Mateo Muñoz | 323 476 4589 | 
-            <a href="mailto:luis.mateo.munoz@correounivalle.edu.co">
-                luis.mateo.munoz@correounivalle.edu.co
-            </a>
+            @mateo_munoz.j · Luis Mateo Muñoz · 323 476 4589 · 
+            <a href="mailto:luis.mateo.munoz@correounivalle.edu.co">luis.mateo.munoz@correounivalle.edu.co</a>
         </p>
     </footer>
 
     <script>
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
+        // Scroll suave
+        function scrollToSectionId(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Animación al hacer scroll (fade + slide up)
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        // Click en botones del topbar
+        const navButtons = document.querySelectorAll('.nav-btn');
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-target');
+                scrollToSectionId(target);
+            });
+        });
 
+        // Animación al hacer scroll (aparecer)
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .project-card');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -313,6 +298,34 @@
         }, { threshold: 0.15 });
 
         animatedElements.forEach(el => observer.observe(el));
+
+        // Scroll spy para activar botón según sección visible
+        const sections = document.querySelectorAll('.section');
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navButtons.forEach(btn => {
+                        btn.classList.toggle('active', btn.getAttribute('data-target') === id);
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+
+        sections.forEach(sec => spyObserver.observe(sec));
+
+        // Botón "volver arriba"
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                toTopBtn.classList.add('show');
+            } else {
+                toTopBtn.classList.remove('show');
+            }
+        });
+        toTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
