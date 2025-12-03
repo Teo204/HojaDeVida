@@ -5,7 +5,7 @@ function App() {
 
   // Cargar proyectos desde el backend
   useEffect(() => {
-    fetch('http://localhost:4000/api/projects')
+    fetch('https://hojadevida-ko6m.onrender.com')
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error('Error cargando proyectos', err));
