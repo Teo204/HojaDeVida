@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const { createClient } = require('@supabase/supabase-js');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -7,71 +9,58 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-// Datos de proyectos (se sirven por API)
-const projects = [
-  {
-    id: 'dulce-hogar',
-    title: 'Sistema de Gestión de Almacén “Dulce Hogar”',
-    tag: 'Frontend · React',
-    tagVariant: 'filled',
-    role: 'Desarrollador Frontend',
-    description:
-      'Aplicación web desarrollada en React para la gestión de productos de un almacén. ' +
-      'Permite administrar inventario, registrar productos y visualizar información estructurada por categorías.',
-    extra: '',
-    techs: ['React', 'JavaScript', 'CSS', 'Vite'],
-    repo: 'https://github.com/VictorPersonal/proyectoalmacen.git'
-  },
-  {
-    id: 'parqueadero',
-    title: 'Reto 1 – Sistema de Control de Parqueadero',
-    tag: 'Fullstack',
-    tagVariant: 'outline',
-    role: 'Desarrollador Fullstack',
-    description:
-      'Sistema para gestionar el ingreso y salida de vehículos de un parqueadero con backend en Node.js + Express ' +
-      'y frontend en React. Implementa una API REST con métodos GET, POST, PUT y DELETE.',
-    extra: '',
-    techs: ['React', 'Node.js', 'Express', 'JavaScript', 'CSS', 'Git'],
-    repo: 'https://github.com/Teo204/Parqueadero'
-  },
-  {
-    id: 'identidad',
-    title: 'Reto 2 – Sistema de Gestión de Identificación Ciudadana',
-    tag: 'Datos · SQL',
-    tagVariant: 'filled',
-    role: 'Modelo de datos y reportes',
-    description:
-      'Diseño de un sistema para gestionar documentos de identidad y datos personales, ' +
-      'con modelado relacional y consultas SQL para generar reportes de usuarios y reportes departamentales.',
-    extra: '',
-    techs: ['Modelado relacional', 'SQL', 'Consultas y reportes', 'Git'],
-    repo: 'https://github.com/Teo204/reto-industria-revolcuion'
-  },
-  {
-    id: 'caicedonia',
-    title: 'Reto 3 – Plataforma de Redistribución de Alimentos en Caicedonia',
-    tag: 'Impacto social',
-    tagVariant: 'outline',
-    role: 'Diseño de solución y prototipo',
-    description:
-      'Plataforma conceptual que conecta establecimientos donantes de alimentos con beneficiarios y voluntarios ' +
-      'para reducir el desperdicio y mejorar el acceso a comida en grupos vulnerables.',
-    extra: '',
-    techs: ['Levantamiento de requisitos', 'Diseño de plataforma', 'Git', 'GitHub'],
-    repo: 'https://github.com/Teo204/caicedonia-alimentos'
-  }
-];
+// --- Conexión a Supabase ---
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-// Endpoint principal de la API
-app.get('/api/projects', (req, res) => {
-  res.json(projects);
-});
+if (!supabaseUrl || !supabaseKey) {
+  console.error('Faltan SUPABASE_URL o SUPABASE_ANON_KEY en el archivo .env');
+  process.exit(1);
+}
 
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// --- Rutas de la API ---
+
+// Ping simple
 app.get('/', (req, res) => {
-  res.send('API del portafolio de Luis Mateo Muñoz');
+  res.send('API del portafolio de Luis Mateo Muñoz (con Supabase)');
 });
 
+// Obtener proyectos desde la base de datos
+app.get('/api/projects', async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('projects')
+      .select('*')
+      .order('title', { ascending: true });
+
+    if (error) {
+      console.error('Error consultando Supabase:', error.message);
+      return res.status(500).json({ message: 'Error consultando proyectos' });
+    }
+
+    // Adaptar formato para el frontend (split de techs)
+    const projects = data.map((row) => ({
+      id: row.id,
+      title: row.title,
+      tag: row.tag,
+      tagVariant: row.tag_variant || 'filled',
+      role: row.role,
+      description: row.description,
+      extra: row.extra || '',
+      techs: row.techs ? row.techs.split(',').map((t) => t.trim()) : [],
+      repo: row.repo
+    }));
+
+    res.json(projects);
+  } catch (err) {
+    console.error('Error inesperado:', err);
+    res.status(500).json({ message: 'Error interno del servidor' });
+  }
+});
+
+// --- Levantar servidor ---
 app.listen(PORT, () => {
   console.log(`Servidor backend escuchando en http://localhost:${PORT}`);
 });
