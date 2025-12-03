@@ -5,11 +5,12 @@ function App() {
 
   // Cargar proyectos desde el backend
   useEffect(() => {
-    fetch('https://hojadevida-ko6m.onrender.com')
+    fetch('https://hojadevida-ko6m.onrender.com/api/projects')
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error('Error cargando proyectos', err));
   }, []);
+
 
   // Scroll suave a secciones
   const scrollToSection = (id) => {
